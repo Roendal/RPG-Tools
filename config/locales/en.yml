@@ -1,0 +1,12 @@
+en:
+  fuzion_rpg:
+    tools:
+      check_roll:
+        already_checked: "Has already been rolled with"
+        failure: "failure"
+        greater: "greater than"
+        greater_and_equal: "greater or equal to"
+        less: "less than"
+        less_and_equal: "less or equal to"
+        must_be: "must be"
+        success: "succes"

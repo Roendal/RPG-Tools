@@ -1,0 +1,6 @@
+source 'http://rubygems.org'
+
+gem 'rpg_tools', :path => '../../../rpg_tools'
+
+gem 'mysql', '2.8.1'
+
