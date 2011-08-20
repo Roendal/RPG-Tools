@@ -21,7 +21,80 @@ Then run:
 
 h2. Using RPG Tools. API
 
-#TODO as soon as possible :D
+h3. Using Tools::Die
+
+Creating a new Die:
+<pre><code>
+  die = Tools::Die.new #Creates a new Die with 20 sides (D20) by default
+  die = Tools::Die.new 6 #Creates a new Die with 6 sides (D6)
+  die = Tools::Die.new 100 #Creates a new Die with 100 sides (D100)
+</code></pre>
+
+Rolling a Die:
+<pre><code>
+  die = Tools::Die.new
+  #Rolling the die once 
+  die.roll # => 8
+  #Rolling the die five times
+  die.roll 5 # => [1, 20, 16, 11, 11]
+</code></pre>
+
+More methods of Die:
+<pre><code>
+  #Converting Die into string
+  die1 = Tools::Die.new 20
+  die2 = Tools::Die.new 6
+  die3 = Tools::Die.new 100
+  die1.to_s # => "D20"
+  die2.to_s # => "D6"
+  die3.to_s # => "D100"
+</code></pre>
+<pre><code>
+  #Comparing Dice
+  die1 = Tools::Die.new 20
+  die2 = Tools::Die.new 6
+  die3 = Tools::Die.new 20
+  die1.eql? die1 # => true
+  die1.eql? die2 # => false
+  die1.eql? die3 # => true
+</code></pre>
+
+h3. Using Tools::Throw
+
+Creating a new Throw:
+<pre><code>
+  dice = [Tools::Die.new(6),Tools::Die.new(6),Tools::Die.new(20),Tools::Die.new(100),Tools::Die.new(100),Tools::Die.new(100)]
+  offset = 3
+  throw = Tools::Throw.new dice,offset #Creates a new throw with 2D6, 1D20, 3D100 and +3
+</code></pre>
+
+Rolling a Throw:
+<pre><code>
+  dice = [Tools::Die.new(6),Tools::Die.new(6),Tools::Die.new(20)]
+  offset = 2
+  throw = Tools::Throw.new dice,offset #Creates a new throw with 2D6, 1D20 and +2
+  #Rolling the throw once (simple)
+  throw.roll # => 10
+  #Rolling the throw once (detailed)
+  throw.roll 1,true # => [25, [6, 6, 11]]
+  #Rolling the throw five times (simple)
+  throw.roll 5 # => [23, 22, 18, 18, 16]
+  #Rolling the throw five times (detailed)
+  throw.roll 5, true # => [[26, [1, 4, 19]], [28, [6, 3, 17]], [13, [1, 4, 6]], [23, [5, 6, 10]], [11, [3, 5, 1]]]
+</code></pre>
+
+More methods of Throw:
+<pre><code>
+  #Converting Throw into string
+  dice = [Tools::Die.new(6),Tools::Die.new(6),Tools::Die.new(20),Tools::Die.new(100),Tools::Die.new(100),Tools::Die.new(100)]
+  offset = 3
+  throw = Tools::Throw.new dice,offset #Creates a new throw with 2D6, 1D20, 3D100 and +3
+  throw.to_s # => "2D6,1D20,3D100+3"
+</code></pre>
+
+h3. Using Tools::CheckRoll
+
+#TODO
 
 h2. License
 
