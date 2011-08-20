@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
 
 	# Gem dependencies
 	#
+  s.add_runtime_dependency('rails', '~> 3.0.0')
 	
 	# Development Gem dependencies
 	#
-  s.add_runtime_dependency('rails', '~> 3.0.0')
 	# Testing database
 	s.add_development_dependency('sqlite3-ruby')
 	# Debugging

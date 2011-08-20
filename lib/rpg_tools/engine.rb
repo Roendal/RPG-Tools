@@ -1,6 +1,3 @@
-# Database foreign keys
-require 'foreigner'
-
 module RPG_Tools
   class Engine < Rails::Engine
 =begin    
