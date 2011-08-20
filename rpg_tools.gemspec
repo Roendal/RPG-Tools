@@ -24,9 +24,7 @@ Gem::Specification.new do |s|
 	s.add_development_dependency('rspec-rails', '~> 2.6.1')
 	# Fixtures
 	s.add_development_dependency('factory_girl', '~> 1.3.2')
-	# Population
-	s.add_development_dependency('forgery', '~> 0.3.6')
 	# Integration testing
-	s.add_development_dependency('capybara', '~> 0.3.9')
+	s.add_development_dependency('capybara', '~> 1.0.1')
 end
 
