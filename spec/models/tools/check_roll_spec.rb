@@ -60,7 +60,7 @@ describe Tools::CheckRoll do
     end
   
     it "should turn a CheckRoll into a String" do
-      string = "#{@throw.to_s} #{I18n.t('fuzion_rpg.tools.check_roll.must_be')} #{I18n.t('fuzion_rpg.tools.check_roll.greater_and_equal')} #{@check_roll.threshold}."
+      string = "#{@throw.to_s} #{I18n.t('rpg_tools.check_roll.must_be')} #{I18n.t('rpg_tools.check_roll.greater_and_equal')} #{@check_roll.threshold}."
       assert @check_roll.to_s.eql? string
     end
   end
