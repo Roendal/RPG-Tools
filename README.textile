@@ -1,6 +1,10 @@
 h1. RPG Tools 
 
-#TODO
+RPG Tools is a compilation of helpful tools when developing a Role Playing Game (RPG). For now the gem has three classes:
+
+Die: Models the use of a simple die (ie. D6, D10, D20, etc.)
+Throw: Takes an array of Die to be rolled and the offset to be added (ie. 2D6, 3D4+5, 2D10,3D20+2, etc.)
+CheckRoll: Using a Throw and a threshold models a check roll with one or several chances and some other settings (ie. 2D6 to get greater or equal to 10, 3D10 to get les than 15, etc.)
 
 h2. Installation
 

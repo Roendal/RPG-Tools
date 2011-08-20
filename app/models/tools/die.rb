@@ -5,7 +5,7 @@ class Tools::Die
     @sides = sides
   end
   
-  # Rolls the die and returns result as +Fixnum+ if rolls==1 or as +Array+ of +Fixnum+
+  # Rolls the Die and returns the result as +Fixnum+ if rolls==1 or as +Array+ of +Fixnum+
   # if rolls>1.
   def roll rolls=1
     return simple_roll if rolls==1
@@ -16,7 +16,7 @@ class Tools::Die
     return results
   end
   
-  # Returns the die as a string with the format Dx, where x is the number of sides. Example "D6", "D20", "D100", etc.
+  # Returns the Die as a string with the format Dx, where x is the number of sides. Example "D6", "D20", "D100", etc.
   def to_s
     return "D#{@sides}"
   end
@@ -29,6 +29,7 @@ class Tools::Die
   
   private 
   
+  #Returns a simple die roll
   def simple_roll
     1 + rand(sides)
   end

@@ -6,8 +6,11 @@ class Tools::Throw
     @offset = offset
   end
   
-  # Rolls the dice, add the offset and returns result as +Fixnum+ if rolls==1 or as 
-  # +Array+ of +Fixnum+ if rolls>1.
+  # Rolls the Throw and returns the result in different ways according to the params. 
+  # If +detailed=false+ it will call +simple_roll+ and +detailed_roll+ in case of +true+.
+  # Refer to these methods for more info of the format.  
+  # Returns the result as +simple_roll/detailed_roll+ if rolls==1 or as +Array+ of 
+  # +simple_roll/detailed_roll+ if rolls>1.
   def roll rolls=1, detailed=false
     return simple_roll if rolls==1 and !detailed
     return detailed_roll if rolls==1 and detailed
@@ -19,7 +22,7 @@ class Tools::Throw
     return results
   end  
   
-  # Returns the dice as a string with the format aDx,bDy,cDz+n, where a,b,c are the number of dice,
+  # Returns the Trhow as a string with the format aDx,bDy,cDz+n, where a,b,c are the number of dice,
   # x,y,z are the number of sides and n the offset. Example "D6,D20,D100+8", etc.
   def to_s
     throw_dice_number = Array.new
@@ -45,6 +48,7 @@ class Tools::Throw
   
   private 
   
+  # Rolls all the dice and adds the offset returning just the total sum.
   def simple_roll
     total = 0
     dice.each do |die|
@@ -54,6 +58,11 @@ class Tools::Throw
     return total
   end
   
+  # Rolls all the dice and adds the offset returning and +Array+ with detailed info.
+  # The first element of the +Array+ is the total sum of the rolled Throw and the second
+  # is another +Array+ containing the result of each one of therolled die of the Throw in
+  # the same order as returned by +dice+ (it may be different from the one used for 
+  # initialize the Throw as it is ordered).
   def detailed_roll
     results = Array.new
     total = 0
