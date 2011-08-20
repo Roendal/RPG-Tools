@@ -1,4 +1,4 @@
-module FuzionRPG 
+module RPG_Tools 
    class << self
     def setup
       yield self
