@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
 	s.name = "rpg-tools"
-	s.version = "0.1.0"
+	s.version = "0.2.0"
 	s.authors = ["Eduardo Casanova Cuesta"]
 	s.summary = "Some tools useful when creating a RPG: Die, Throw and CheckRoll."
 	s.description = "Some tools useful when creating a RPG: Die, Throw and CheckRoll."
