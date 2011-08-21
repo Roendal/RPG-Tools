@@ -1,5 +1,5 @@
 en:
-  rpg_tools:
+  rpg-tools:
     check_roll:
       already_checked: "Has already been rolled with"
       failure: "failure"

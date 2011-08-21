@@ -7,7 +7,7 @@ require "action_view/railtie"
 require "action_mailer/railtie"
 
 Bundler.require
-require "rpg_tools"
+require "rpg-tools"
 
 module Dummy
   class Application < Rails::Application

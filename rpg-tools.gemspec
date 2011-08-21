@@ -10,21 +10,21 @@ Gem::Specification.new do |s|
 
 	# Gem dependencies
 	#
-  s.add_runtime_dependency('rails', '~> 3.0.0')
+  s.add_runtime_dependency 'rails', '~> 3.0.0'
 	
 	# Development Gem dependencies
 	#
 	# Testing database
-	s.add_development_dependency('sqlite3-ruby')
+	s.add_development_dependency 'sqlite3-ruby'
 	# Debugging
 	if RUBY_VERSION < '1.9'
-		s.add_development_dependency('ruby-debug', '~> 0.10.3')
+		s.add_development_dependency 'ruby-debug', '~> 0.10.3'
 	end
 	# Specs
-	s.add_development_dependency('rspec-rails', '~> 2.6.1')
+	s.add_development_dependency 'rspec-rails'
 	# Fixtures
-	s.add_development_dependency('factory_girl', '~> 1.3.2')
+	s.add_development_dependency 'factory_girl'
 	# Integration testing
-	s.add_development_dependency('capybara', '~> 1.0.1')
+	s.add_development_dependency 'capybara'
 end
 

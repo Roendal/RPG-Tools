@@ -66,10 +66,10 @@ module Tools
 
     # Returns the CheckRoll as a string. Example "2D4,1D6,1D20+3 must be greater or equal to 20."
     def to_s
-      string = "#{@throw.to_s} #{I18n.t('rpg_tools.check_roll.must_be')} #{comparatives_text} #{@threshold}."
+      string = "#{@throw.to_s} #{I18n.t('rpg-tools.check_roll.must_be')} #{comparatives_text} #{@threshold}."
       if @result
-        string << " #{I18n.t('rpg_tools.check_roll.already_checked')}"
-        string << " #{@result[0] ? I18n.t('rpg_tools.check_roll.success') : I18n.t('rpg_tools.check_roll.failure')}"
+        string << " #{I18n.t('rpg-tools.check_roll.already_checked')}"
+        string << " #{@result[0] ? I18n.t('rpg-tools.check_roll.success') : I18n.t('rpg-tools.check_roll.failure')}"
         string << " (#{@result[1][0]})."
       end
       string
@@ -95,13 +95,13 @@ module Tools
       gtt = @greater_than_threshold
       ett = @equal_to_threshold
       if gtt and ett
-        return I18n.t 'rpg_tools.check_roll.greater_and_equal'
+        return I18n.t 'rpg-tools.check_roll.greater_and_equal'
       elsif gtt and !ett
-        return I18n.t 'rpg_tools.check_roll.greater'
+        return I18n.t 'rpg-tools.check_roll.greater'
       elsif !gtt and !ett
-        return I18n.t 'rpg_tools.check_roll.less'
+        return I18n.t 'rpg-tools.check_roll.less'
       elsif !gtt and ett
-        return I18n.t 'rpg_tools.check_roll.less_and_equal'
+        return I18n.t 'rpg-tools.check_roll.less_and_equal'
       end
     end
   end
