@@ -124,6 +124,27 @@ Rolling a CheckRoll:
   check_roll.detailed_result # => [true, [12, [6, 4]]]
 </code></pre>
 
+Using <code>greater_than_threshold</code> and <code>greater_to_threshold</code> attributes:
+<pre><code>
+  dice = [Tools::Die.new(6),Tools::Die.new(6)]
+  offset = 2
+  throw = Tools::Throw.new dice,offset #Creates a new throw with 2D6+2
+  threshold = 9
+  #Creating a "greater and equal to" check
+  check_roll1 = Tools::CheckRoll.new throw, threshold #1,true,true (by default)
+  check_roll1.to_s # => "2D6+2 must be greater or equal to 9."
+  #Creating a "greater than" check
+  check_roll2 = Tools::CheckRoll.new throw, threshold, 1, true, false
+  check_roll2.to_s # => "2D6+2 must be greater than 9." 
+  #Creating a "less than" check
+  check_roll3 = Tools::CheckRoll.new throw, threshold, 1, false, false
+  check_roll3.to_s # => "2D6+2 must be less than 9."
+  #Creating a "less and equal to" check
+  check_roll4 = Tools::CheckRoll.new throw, threshold, 1, false, true
+  check_roll4.to_s # => "2D6+2 must be less or equal to 9."
+</code></pre>
+
+
 More methods of CheckRoll:
 <pre><code>
   #Converting CheckRoll into string

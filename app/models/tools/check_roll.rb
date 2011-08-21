@@ -1,14 +1,18 @@
 module Tools
   class CheckRoll
 
-    attr_accessor :throw, :threshold, :rolling_chances, :greater_than_threshold, :equal_than_threshold
+    attr_accessor :throw, :threshold, :rolling_chances, :greater_than_threshold, :equal_to_threshold
     attr_reader :result
-    def initialize throw, threshold, rolling_chances=1, greater_than_threshold=true, equal_than_threshold=true
+    # Creates a new +CheckRoll+ with a +Throw+, a +Fixnum+ as +threshold+ and, optionally:
+    # * +rolling_chances+: The number of times the Throw will be rolled before checking. By default is +1+.
+    # * +greater_than_threshold+: Wheter the check is done as greater than (>) or less than (<). By default is +true+.
+    # * +equal_to_threshold+: Wheter the check accepts the threshold as success (>= and <= if +true+, > and < if +false+). By default is +true+.
+    def initialize throw, threshold, rolling_chances=1, greater_than_threshold=true, equal_to_threshold=true
       @throw = throw
       @threshold = threshold
       @rolling_chances = rolling_chances
       @greater_than_threshold = greater_than_threshold
-      @equal_than_threshold = equal_than_threshold
+      @equal_to_threshold = equal_to_threshold
     end
 
     # Rolls the Throw as many times as rolling chances are set.If has already
@@ -75,7 +79,7 @@ module Tools
 
     def compare rolled_throw, threshold
       gtt = @greater_than_threshold
-      ett = @equal_than_threshold
+      ett = @equal_to_threshold
       if gtt and ett
       return rolled_throw >= threshold
       elsif gtt and !ett
@@ -89,7 +93,7 @@ module Tools
 
     def comparatives_text
       gtt = @greater_than_threshold
-      ett = @equal_than_threshold
+      ett = @equal_to_threshold
       if gtt and ett
         return I18n.t 'rpg_tools.check_roll.greater_and_equal'
       elsif gtt and !ett

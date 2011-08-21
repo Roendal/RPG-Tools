@@ -1,6 +1,7 @@
 module Tools
   class Die
     attr_accessor :sides
+    # Creates a new +Die+ with a +Fixnum+ as the number of +sides+
     def initialize sides=20
       @sides = sides
     end

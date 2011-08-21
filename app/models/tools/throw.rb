@@ -1,6 +1,8 @@
 module Tools
   class Throw
     attr_accessor :dice, :offset
+    
+    # Creates a new +Throw+ with an +Array+ of +Die+ and a +Fixnum+ as +offset+
     def initialize dice, offset=0
       @dice = dice.sort_by{|die| die.sides}
       @offset = offset
