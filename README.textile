@@ -12,7 +12,7 @@ h2. Installation
 
 Add to your Gemfile:
 <pre><code>
-  gem 'rpg_tools'
+  gem 'rpg-tools'
 </code></pre>
 Then run:
 <pre><code>
