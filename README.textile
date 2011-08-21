@@ -94,7 +94,46 @@ More methods of Throw:
 
 h3. Using Tools::CheckRoll
 
-#TODO
+Creating a new CheckRoll:
+<pre><code>
+  dice = [Tools::Die.new(6),Tools::Die.new(6)]
+  offset = 2
+  throw = Tools::Throw.new dice,offset #Creates a new throw with 2D6+2
+  threshold = 9
+  check_roll = Tools::CheckRoll.new throw, threshold #Creates a CheckRoll with 2D6+2 throw and a threshold of 9
+</code></pre>
+
+Rolling a CheckRoll:
+<pre><code>
+  dice = [Tools::Die.new(6),Tools::Die.new(6)]
+  offset = 2
+  throw = Tools::Throw.new dice,offset #Creates a new throw with 2D6+2
+  threshold = 9
+  check_roll = Tools::CheckRoll.new throw, threshold #Creates a CheckRoll with 2D6+2 throw and a threshold of 9
+  #Roll the CheckRoll
+  check_roll.roll # => [false, 6]
+  #CheckRoll results
+  check_roll.is_successful? # => false
+  check_roll.result # => [false, 6]
+  check_roll.detailed_result # => [false, [6, [3, 1]]]
+  #Reroll the CheckRoll
+  check_roll.reroll # => [true, 12]
+  #CheckRoll results
+  check_roll.is_successful? # => true 
+  check_roll.result # => [true, 12]
+  check_roll.detailed_result # => [true, [12, [6, 4]]]
+</code></pre>
+
+More methods of CheckRoll:
+<pre><code>
+  #Converting CheckRoll into string
+  dice = [Tools::Die.new(6),Tools::Die.new(6)]
+  offset = 2
+  throw = Tools::Throw.new dice,offset #Creates a new throw with 2D6+2
+  threshold = 9
+  check_roll = Tools::CheckRoll.new throw, threshold #Creates a CheckRoll with 2D6+2 throw and a threshold of 9
+  check_roll.to_s # => "2D6+2 must be greater or equal to 9."
+</code></pre>
 
 h2. License
 
