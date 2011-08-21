@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
 	s.name = "rpg-tools"
-	s.version = "0.2.1"
+	s.version = "0.2.2"
 	s.authors = ["Eduardo Casanova Cuesta"]
 	s.summary = "RPG Tools is a compilation of helpful tools when developing a Role Playing Game (RPG). For now the gem has three classes: Die, Throw and CheckRoll. "
 	s.description = "RPG Tools is a compilation of helpful tools when developing a Role Playing Game (RPG). For now the gem has three classes: Die, Throw and CheckRoll."
@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 	s.add_development_dependency 'sqlite3-ruby'
 	# Debugging
 	if RUBY_VERSION < '1.9'
-		s.add_development_dependency 'ruby-debug', '~> 0.10.3'
+		s.add_development_dependency 'ruby-debug'
 	end
 	# Specs
 	s.add_development_dependency 'rspec-rails'
