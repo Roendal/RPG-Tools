@@ -1,4 +1,4 @@
-h1. RPG Tools 
+h1. RPG Tools "!https://secure.travis-ci.org/Roendal/RPG-Tools.png!":http://travis-ci.org/Roendal/RPG-Tools
 
 RPG Tools is a compilation of helpful tools when developing a Role Playing Game (RPG). For now the gem has three classes:
 
