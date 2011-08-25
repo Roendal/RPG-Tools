@@ -23,7 +23,19 @@ module Tools
       end
       return results
     end
-
+    
+    # Adds delta to the offset value
+    def add_offset delta
+      @offset+= delta
+      self
+    end
+    
+    # Subtracts delta to the offset value
+    def substract_offset delta
+      @offset-= delta
+      self
+    end
+    
     # Returns the Trhow as a string with the format aDx,bDy,cDz+n, where a,b,c are the number of dice,
     # x,y,z are the number of sides and n the offset. Example "D6,D20,D100+8", etc.
     def to_s
