@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
 	s.name = "rpg-tools"
-	s.version = "0.2.3"
+	s.version = "0.2.4"
 	s.authors = ["Eduardo Casanova Cuesta"]
 	s.summary = "RPG Tools is a compilation of helpful tools when developing a Role Playing Game (RPG). For now the gem has three classes: Die, Throw and CheckRoll. "
 	s.description = "RPG Tools is a compilation of helpful tools when developing a Role Playing Game (RPG). For now the gem has three classes: Die, Throw and CheckRoll."
